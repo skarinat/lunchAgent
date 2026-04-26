@@ -1,4 +1,3 @@
-const GEMINI_API_KEY = " *** INSERT YOUR KEY HERE *****";
 function onEdit(e) {
   const range = e.range;
   // Only run if the edited cell is E1 and it's checked (true)
