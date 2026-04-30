@@ -40,7 +40,8 @@ This repo includes a pre-built spreadsheet (`LunchAgentDataBase.xlsx`) with the 
 3. Go to [drive.google.com](https://drive.google.com) and sign in
 4. Click **New > File upload** and select the `LunchAgentDataBase.xlsx` you downloaded
 5. Once uploaded, right-click the file and choose **Open with > Google Sheets** — this converts it to a native Google Sheet
-6. Confirm the file is named `LunchAgentDataBase` (no `.xlsx` extension) and has two tabs: **Sheet1** and **Ingredients**
+6. Then Click File -> Save as Google Sheet
+7. Confirm the file is named `LunchAgentDataBase` (no `.xlsx` extension) and has two tabs: **Sheet1** and **Ingredients**
 
 > 💡 **Tip:** After opening with Google Sheets, a separate Sheets version is created. You can delete the original `.xlsx` upload from Drive — the Sheets version is what the scripts use.
 
