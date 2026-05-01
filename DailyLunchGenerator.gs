@@ -1,6 +1,6 @@
 function sendDailyLunchEmail() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("****Add Sheet Name ***");
+  var sheet = ss.getSheetByName("Sheet1");
   var data = sheet.getDataRange().getDisplayValues();
   
   var today = new Date();
