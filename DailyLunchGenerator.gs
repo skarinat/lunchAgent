@@ -1,3 +1,6 @@
+// 1. GLOBAL SETTINGS
+const RECIPIENT_EMAIL = " *** INSERT EMAIL *** ";
+
 function sendDailyLunchEmail() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName("Sheet1");
