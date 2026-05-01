@@ -29,53 +29,62 @@ Connect to the workshop guest Wi-Fi (or your personal hotspot) before proceeding
 
 ---
 
-## Step 2: Get the Lunch Database Spreadsheet
+Step 2: Create Your Lunch Database Using Gemini AI
+Instead of downloading a file, you will use Gemini AI to generate your lunch database and export it directly into a Google Sheet in one step. No file uploads or downloads needed.
+2a — Open Gemini
+Go to gemini.google.com and sign in with your Google account.
+2b — Copy and run this prompt
+Copy the entire prompt below, paste it into Gemini, and press Enter:
+Role: You are a meal planning and logistics assistant.
 
-This repo includes a pre-built spreadsheet (`LunchAgentDataBase.xlsx`) with the correct column structure and sample meal data. Get your own editable copy using one of the options below.
+Task: Generate a comprehensive nut-free, high-protein lunch plan and export it
+as a Google Spreadsheet with two tabs.
 
-### Option A: Download from GitHub and Upload to Drive *(Recommended)*
+Tab 1 — Name it exactly: Sheet1
+Columns: Category | Main Dish | Fruit / Snack | Afternoon Treat
+Content: 20 unique kid-friendly lunch ideas.
+Category must be one of: Rice & Grains, Pasta & Western, Sandwiches & Wraps,
+Indian & Asian, Soups & Salads, Quick Bites.
 
-1. In this repository, click on **`LunchAgentDataBase.xlsx`** in the file list
-2. Click the **Download raw file** button (the ↓ icon on the right side of the toolbar) — the file saves to your computer
-3. Go to [drive.google.com](https://drive.google.com) and sign in
-4. Click **New > File upload** and select the `LunchAgentDataBase.xlsx` you downloaded
-5. Once uploaded, right-click the file and choose **Open with > Google Sheets** — this converts it to a native Google Sheet
-6. Then Click File -> Save as Google Sheet
-7. Confirm the file is named `LunchAgentDataBase` (no `.xlsx` extension) and has two tabs: **Sheet1** and **Ingredients**
+Tab 2 — Name it exactly: Ingredients
+Columns: # | Ingredient
+Content: All ingredients needed for the above meals, one per row, numbered from 1.
 
-> 💡 **Tip:** After opening with Google Sheets, a separate Sheets version is created. You can delete the original `.xlsx` upload from Drive — the Sheets version is what the scripts use.
+CRITICAL RULES:
+1. Strictly nut-free — no peanuts, tree nuts, or nut-based sauces.
+2. Every main dish must include a clear protein source
+   (chicken, eggs, paneer, tofu, tuna, beans, cheese, or lentils).
+3. Fruit / Snack must be a fresh fruit or raw vegetable only.
+4. Afternoon Treat must be a packaged snack under 150 calories
+   (granola bar, yogurt cup, rice cake, fruit pouch, oat cookie, rice crispy bar).
+5. Export directly as a Google Spreadsheet using the Export to Sheets button.
+6. Name the file exactly: LunchAgentDataBase
+2c — Export to Google Sheets
+Once Gemini generates the data:
 
-### Option B: Import Directly (Advanced)
+Look for the Google Sheets icon or "Export to Sheets" button at the top-right of the Gemini response table
+Click it — Gemini will create the spreadsheet directly in your Google Drive and open it automatically
 
-1. In Google Drive, click **New > Google Sheets** to create a blank sheet
-2. Click **File > Import**
-3. Select the **Upload** tab and drag in the `LunchAgentDataBase.xlsx` file
-4. Choose **Replace spreadsheet** and click **Import data**
-5. Rename the file to `LunchAgentDataBase` if needed
 
-### ✅ Verify the Spreadsheet Structure
+💡 Don't see the Export button? Click the 3-dot menu (⋮) on the Gemini response and select "Export to Google Sheets". If Gemini shows the data as plain text instead of a table, type "Show this as a table" and try the export button again.
 
+2d — Rename and verify the file
+
+Once the sheet opens, confirm the filename at the top reads LunchAgentDataBase
+If not, click the filename and rename it
+Confirm you have exactly two tabs at the bottom: Sheet1 and Ingredients
+
+✅ Verify the Spreadsheet Structure
 The scripts depend on these exact column positions — confirm before continuing:
+Sheet1 tab (your meal list):
+ColumnContentACategory (e.g. Rice & Grains, Quick Bites)BMain Dish — this is what gets emailed dailyCFruit / SnackDAfternoon Treat
+Ingredients tab (your pantry staples):
+ColumnContentARow number (#)BIngredient name — one per row
 
-**Sheet1 tab** (your meal list):
+⚠️ If the columns are in the wrong order, drag the column headers in Sheets to match the structure above before moving to Step 3. The scripts read by column position, not by header name.
 
-| Column | Content |
-|--------|---------|
-| A | Category (e.g. `Rice Options`, `Quick Bites`) |
-| B | Main Dish — **this is what gets emailed daily** |
-| C | Fruit / Snack |
-| D | Afternoon Treat |
 
-**Ingredients tab** (your pantry staples):
-
-| Column | Content |
-|--------|---------|
-| Row 1 | Header row (e.g. `#`, `Ingredient`) |
-| B | Ingredient names — one per row |
-
-> 💡 **Customize:** Feel free to add your own meals to Sheet1. Just make sure Column A does not end with the word `Options` unless it's a category header — the script uses that to skip headers.
-
----
+💡 Want to add more meals later? Run generateMealsWithAI() from Setup.gs — it calls Gemini automatically and appends new meals directly to your sheet without any copy-pasting.
 
 ## Step 3: Get Your Gemini AI API Key
 
