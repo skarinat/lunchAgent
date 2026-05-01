@@ -225,10 +225,24 @@ Use these prompts in [Gemini](https://gemini.google.com) or [ChatGPT](https://ch
 ### 1. Generate Your Spreadsheet Data
 
 ```
-I want to build a Google Sheet for a family lunch planner.
-Create a table with these columns: Category, Main Dish, Fruit/Snack, Afternoon Treat.
-Populate it with 15 rows of healthy, kid-friendly lunches across categories:
-Rice Options, Pasta/Western, and Quick Bites.
+Role: You are a meal planning and logistics assistant.
+Task: Generate a comprehensive nut-free, high-protein meal plan for the week and a structured inventory list.
+Requirements:
+
+One Single Google Spreadsheet (File) with Two Specific Tabs:
+Tab 1 Name: "Meal Plan"
+Structure: Category, Main Dish, Fruit / Snack, Afternoon Treat
+Content: 20 unique lunch ideas.
+Categories: Rice & Grains, Pasta & Western, Sandwiches & Wraps, Indian & Asian, Soups & Salads, or Quick Bites.
+Tab 2 Name: "Inventory"
+Structure: Section, Item
+Content: All ingredients/items needed for the above meals.
+Sections: Produce, Protein, Pantry, Dairy, or Frozen.
+CRITICAL:
+
+Strict Output Format: You MUST return one single Google Spreadsheet containing both requested tabs. Do not create two separate files.
+No Markdown or Text: Provide only the spreadsheet. No markdown fences, no introductory prose, and no conversational filler.
+Dietary Constraints: All meals must be strictly nut-free and prioritize high protein.
 ```
 
 ### 2. Generate the Daily Lunch Script
