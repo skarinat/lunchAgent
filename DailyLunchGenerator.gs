@@ -35,7 +35,7 @@ afternoonTreat = randomSelection[3]; // Column D
 
 
 
-  var emailRecipient = "**** INSERT YOUR EMAIL *****";
+  //var emailRecipient = "**** INSERT YOUR EMAIL *****";
   var subject = "Daily Lunch Mission: " + Utilities.formatDate(today, Session.getScriptTimeZone(), "EEEE, MMMM d");
   
   var body = "Daily Lunch Mission: " + subject + "\n\n" +
