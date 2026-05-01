@@ -5,7 +5,7 @@
 
 // 1. GLOBAL SETTINGS
 const GEMINI_API_KEY = " *** INSERT YOUR KEY HERE *****";
-const RECIPIENT_EMAIL = " *** INSERT EMAIL *** ";        
+//const RECIPIENT_EMAIL = " *** INSERT EMAIL *** ";        
 
 /**
  * Main function: Reads your sheet and adds AI snack research.
