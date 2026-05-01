@@ -29,12 +29,19 @@ Connect to the workshop guest Wi-Fi (or your personal hotspot) before proceeding
 
 ---
 
-Step 2: Create Your Lunch Database Using Gemini AI
-Instead of downloading a file, you will use Gemini AI to generate your lunch database and export it directly into a Google Sheet in one step. No file uploads or downloads needed.
-2a — Open Gemini
-Go to gemini.google.com and sign in with your Google account.
-2b — Copy and run this prompt
-Copy the entire prompt below, paste it into Gemini, and press Enter:
+## Step 2: Create Your Lunch Database Using Gemini AI
+
+Instead of downloading a file, you will use **Gemini AI** to generate your lunch database and export it directly into a Google Sheet in one step. No file uploads or downloads needed.
+
+### 2a — Open Gemini
+
+Go to [gemini.google.com](https://gemini.google.com) and sign in with your Google account.
+
+### 2b — Copy and run this prompt
+
+Copy the entire prompt below, paste it into Gemini, and press **Enter**:
+
+```
 Role: You are a meal planning and logistics assistant.
 
 Task: Generate a comprehensive nut-free, high-protein lunch plan and export it
@@ -59,48 +66,64 @@ CRITICAL RULES:
    (granola bar, yogurt cup, rice cake, fruit pouch, oat cookie, rice crispy bar).
 5. Export directly as a Google Spreadsheet using the Export to Sheets button.
 6. Name the file exactly: LunchAgentDataBase
-2c — Export to Google Sheets
+```
+
+### 2c — Export to Google Sheets
+
 Once Gemini generates the data:
 
-Look for the Google Sheets icon or "Export to Sheets" button at the top-right of the Gemini response table
-Click it — Gemini will create the spreadsheet directly in your Google Drive and open it automatically
+1. Look for the **Google Sheets icon** or **"Export to Sheets"** button at the top-right of the Gemini response table
+2. Click it — Gemini will create the spreadsheet directly in your Google Drive and open it automatically
 
+> 💡 **Don't see the Export button?** Click the **3-dot menu (⋮)** on the Gemini response and select **"Export to Google Sheets"**. If Gemini shows the data as plain text instead of a table, type `"Show this as a table"` and try the export button again.
 
-💡 Don't see the Export button? Click the 3-dot menu (⋮) on the Gemini response and select "Export to Google Sheets". If Gemini shows the data as plain text instead of a table, type "Show this as a table" and try the export button again.
+### 2d — Rename and verify the file
 
-2d — Rename and verify the file
+1. Once the sheet opens, confirm the filename at the top reads **`LunchAgentDataBase`**
+2. If not, click the filename and rename it
+3. Confirm you have exactly two tabs at the bottom: **`Sheet1`** and **`Ingredients`**
 
-Once the sheet opens, confirm the filename at the top reads LunchAgentDataBase
-If not, click the filename and rename it
-Confirm you have exactly two tabs at the bottom: Sheet1 and Ingredients
+### ✅ Verify the Spreadsheet Structure
 
-✅ Verify the Spreadsheet Structure
 The scripts depend on these exact column positions — confirm before continuing:
-Sheet1 tab (your meal list):
-ColumnContentACategory (e.g. Rice & Grains, Quick Bites)BMain Dish — this is what gets emailed dailyCFruit / SnackDAfternoon Treat
-Ingredients tab (your pantry staples):
-ColumnContentARow number (#)BIngredient name — one per row
 
-⚠️ If the columns are in the wrong order, drag the column headers in Sheets to match the structure above before moving to Step 3. The scripts read by column position, not by header name.
+**Sheet1 tab** (your meal list):
 
+| Column | Content |
+|--------|---------|
+| A | Category (e.g. `Rice & Grains`, `Quick Bites`) |
+| B | Main Dish — **this is what gets emailed daily** |
+| C | Fruit / Snack |
+| D | Afternoon Treat |
 
-💡 Want to add more meals later? Run generateMealsWithAI() from Setup.gs — it calls Gemini automatically and appends new meals directly to your sheet without any copy-pasting.
+**Ingredients tab** (your pantry staples):
 
-## Step 3: Get Your Gemini AI API Key
+| Column | Content |
+|--------|---------|
+| A | Row number (`#`) |
+| B | Ingredient name — one per row |
 
-Your scripts use the Gemini AI API (free tier). You need an API key.
+> ⚠️ **If the columns are in the wrong order**, drag the column headers in Sheets to match the structure above before moving to Step 3. The scripts read by column position, not by header name.
 
-1. Go to [aistudio.google.com](https://aistudio.google.com) and sign in
-2. Click **"Get API key"** in the left sidebar
-3. Click **"Create API key in new project"** (top-left)
-4. Name the key: `LunchGenerator` | Project name: `LunchGenerator`
-5. Click **Create** and copy your API key — you'll paste it into the script later
+### 2e — Troubleshooting: Only One Tab?
 
-> ⚠️ **Keep your API key private.** Do not share it or commit it to GitHub.
+If Gemini exported everything into a single tab instead of two, your meal data and ingredients list are stacked in the same sheet. Fix it in a few steps:
+
+1. Scroll down in your sheet until you find the **Ingredients table** — it will start with a `#` and `Ingredient` header row below your meal data
+2. Click the row number of the `#` header to select that entire row, then hold **Shift** and click the last row of ingredients to select all ingredient rows
+3. Right-click the selection and choose **Cut**
+4. At the bottom of the screen, click the **"+"** icon to add a new tab
+5. Double-click the new tab name and rename it to exactly: `Ingredients`
+6. Click cell **A1** in the new Ingredients tab and press **Ctrl+V** (or **Cmd+V** on Mac) to paste
+7. Go back to **Sheet1** and confirm it now contains only the meal rows with no leftover ingredient data below
+
+> 💡 **Quick check:** Sheet1 should have 4 columns (Category, Main Dish, Fruit / Snack, Afternoon Treat). The Ingredients tab should have 2 columns (# and Ingredient). If either tab has extra blank rows at the bottom left over from the cut, select them and press **Delete** to clear them.
+
+> 💡 **Want to add more meals later?** Run `generateMealsWithAI()` from `Setup.gs` — it calls Gemini automatically and appends new meals directly to your sheet without any copy-pasting.
 
 ---
 
-## Step 4: Open the Apps Script Editor
+## Step 3: Open the Apps Script Editor
 
 Google Apps Script is the free, cloud-based scripting platform built into Google Workspace — no installs required.
 
@@ -127,7 +150,7 @@ The `appsscript.json` manifest controls which Google services your script can ac
 
 ---
 
-## Step 5: Add the Script Files
+## Step 4: Add the Script Files
 
 Copy each script from this repository into your Apps Script project.
 
@@ -165,16 +188,25 @@ Copy each script from this repository into your Apps Script project.
 
 1. Click **"+" > Script** and name it: `GroceryList.gs`
 2. Copy the code from [`GroceryList.gs`](./GroceryList.gs) and paste it in
-3. On line 7, paste your Gemini API key:
+3. **Get your Gemini API key** — you need this before you can fill in the next line:
+   1. Go to [aistudio.google.com](https://aistudio.google.com) and sign in with your Google account
+   2. Click **"Get API key"** in the left sidebar
+   3. Click **"Create API key in new project"** (top-left)
+   4. Name the key: `LunchGenerator` | Project name: `LunchGenerator`
+   5. Click **Create**, then click the **Copy** icon next to your new key
+
+   > ⚠️ **Keep your API key private.** Do not share it or commit it to GitHub.
+
+4. Back in Apps Script, on line 7, paste your copied API key:
    ```javascript
    const GEMINI_API_KEY = "*** INSERT YOUR KEY HERE *****";
    ```
-4. On line 8, set the recipient email:
+5. On line 8, set the recipient email:
    ```javascript
    const RECIPIENT_EMAIL = "*** INSERT EMAIL ***";
    ```
-5. Confirm your spreadsheet has both **Sheet1** and **Ingredients** tabs — or edit the `getSheetByName()` calls to match your tab names
-6. Click **Save**, then click **Run**
+6. Confirm your spreadsheet has both **Sheet1** and **Ingredients** tabs — or edit the `getSheetByName()` calls to match your tab names
+7. Click **Save**, then click **Run**
 
 > ℹ️ **How it works:** The script calls the **Gemini 2.5 Flash** model (`gemini-2.5-flash`). It reads your Ingredients sheet and asks AI for a trending nut-free snack to include in the weekly email.
 
@@ -186,15 +218,36 @@ Copy each script from this repository into your Apps Script project.
 
 1. Click **"+" > Script** and name it: `PhotoLunchGenerator.gs`
 2. Copy the code from [`PhotoLunchGenerator.gs`](./PhotoLunchGenerator.gs) and paste it in
-3. Set your **Google Drive Folder ID** (the folder where you'll upload fridge or receipt photos)
-4. Set the **recipient email address**
-5. Click **Save**, then click **Run**
+3. **Get your Google Drive Folder ID** — this is the folder where you will upload fridge or receipt photos for the agent to analyse:
+   1. Go to [drive.google.com](https://drive.google.com) and sign in
+   2. Click **New > New folder**, name it `LunchAgentPhotos`, and click **Create**
+   3. Open the folder by double-clicking it
+   4. Look at the browser address bar — the URL will look like this:
+      ```
+      https://drive.google.com/drive/folders/1A2B3C4D5E6F7G8H9I0J
+      ```
+   5. Copy the long string of letters and numbers at the very end — that is your **Folder ID** (e.g. `1A2B3C4D5E6F7G8H9I0J`)
+4. Back in Apps Script, on **line 12**, replace the placeholder with your Folder ID:
+   ```javascript
+   // Before:
+   var folderId = "*** INSERT YOUR FOLDER ID HERE ***";
 
-> 💡 **What it does:** The Photo Agent inspects the latest image in your Drive folder. If it detects a **fridge photo**, it suggests 3 high-protein kid-friendly lunches. If it detects a **grocery receipt**, it compares items against your spreadsheet favorites.
+   // After:
+   var folderId = "1A2B3C4D5E6F7G8H9I0J"; // ← paste your actual Folder ID here
+   ```
+5. Set the **recipient email address** on the email line:
+   ```javascript
+   var emailRecipient = "you@gmail.com";
+   ```
+6. Click 💾 **Save**, then click **Run**
+
+> 💡 **How to use it:** Upload a photo of your fridge or a grocery receipt into your `LunchAgentPhotos` folder in Google Drive, then run the script. If it detects a **fridge photo**, it suggests 3 high-protein kid-friendly lunches. If it detects a **grocery receipt**, it compares items against your spreadsheet favorites.
+
+> 💡 **Tip:** You can upload photos directly from your phone — open Google Drive on your phone, navigate to the `LunchAgentPhotos` folder, and tap **"+"** to upload from your camera roll.
 
 ---
 
-## Step 6: Set Up Automated Triggers
+## Step 5: Set Up Automated Triggers
 
 Triggers let your scripts run automatically on a schedule — no manual clicking needed.
 
@@ -308,6 +361,7 @@ The script must:
 | `DailyLunchGenerator.gs` | Picks a random lunch from your sheet and emails it daily |
 | `GroceryList.gs` | Generates a weekly grocery list using Gemini AI |
 | `PhotoLunchGenerator.gs` | Analyzes a fridge/receipt photo and suggests lunches |
+| `Setup.gs` | Populates your sheet with sample data + AI meal generator |
 | `appscript.json` | Manifest file — restricts script permissions to required scopes |
 | `LunchAgentDataBase.xlsx` | Starter spreadsheet with sample meal data |
 
