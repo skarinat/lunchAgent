@@ -160,15 +160,7 @@ Copy each script from this repository into your Apps Script project.
 
 1. In Apps Script, click **"+" > Script** and name it exactly: `DailyLunchGenerator.gs`
 2. Copy the code from [`DailyLunchGenerator.gs`](./DailyLunchGenerator.gs) and paste it in
-3. Find line ~9 and replace the placeholder with your sheet tab name:
-   ```javascript
-   // Before:
-   var sheet = ss.getSheetByName("****Add Sheet Name ***");
-
-   // After:
-   var sheet = ss.getSheetByName("Sheet1");
-   ```
-4. Find line ~35 and insert your email address:
+3. Find line ~35 and insert your email address:
    ```javascript
    // Before:
    var emailRecipient = "**** INSERT YOUR EMAIL *****";
@@ -176,7 +168,7 @@ Copy each script from this repository into your Apps Script project.
    // After:
    var emailRecipient = "you@gmail.com";
    ```
-5. Click 💾 **Save**, then click **Run**. Accept the permissions dialog when prompted.
+4. Click 💾 **Save**, then click **Run**. Accept the permissions dialog when prompted.
 
 > ⚠️ **Important:** The script reads columns B, C, and D. It skips rows where Column B is empty and rows where Column A contains the word `Options`. Make sure your data rows are populated correctly.
 
