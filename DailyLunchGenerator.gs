@@ -44,5 +44,5 @@ afternoonTreat = randomSelection[3]; // Column D
              "Fruit Snack:\n- " + fruitSnack + "\n\n" +
              "Afternoon Treat:\n- " + afternoonTreat;
 
-  MailApp.sendEmail(emailRecipient, subject, body);
+  MailApp.sendEmail(RECIPIENT_EMAIL, subject, body);
 }
