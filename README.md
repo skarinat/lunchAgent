@@ -196,10 +196,7 @@ Copy each script from this repository into your Apps Script project.
    ```javascript
    const GEMINI_API_KEY = "*** INSERT YOUR KEY HERE *****";
    ```
-5. On line 8, set the recipient email:
-   ```javascript
-   const RECIPIENT_EMAIL = "*** INSERT EMAIL ***";
-   ```
+
 6. Confirm your spreadsheet has both **Sheet1** and **Ingredients** tabs — or edit the `getSheetByName()` calls to match your tab names
 7. Click **Save**, then click **Run**
 
