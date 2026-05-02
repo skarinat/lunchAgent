@@ -66,6 +66,9 @@ CRITICAL RULES:
    (granola bar, yogurt cup, rice cake, fruit pouch, oat cookie, rice crispy bar).
 5. Export directly as a Google Spreadsheet using the Export to Sheets button.
 6. Name the file exactly: LunchAgentDataBase
+7. Name the Tab 1 — Name it exactly: Sheet1
+8. Tab 2 — Name it exactly: Ingredients
+9. Ingredient should be in Tab 2
 ```
 
 ### 2c — Export to Google Sheets
