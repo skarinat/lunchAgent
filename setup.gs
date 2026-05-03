@@ -12,7 +12,7 @@ function setupLunchDatabase() {
 
 
   // ── Sheet1: Meal List ──────────────────────────────────────────────────────
-  var sheet1 = ss.getSheetByName("Sheet1") || ss.insertSheet("Sheet1");
+  var sheet1 = ss.getSheetByName("LunchAgentDataBase") || ss.insertSheet("LunchAgentDataBase");
   sheet1.clearContents();
 
   var meals = [
