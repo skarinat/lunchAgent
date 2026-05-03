@@ -84,13 +84,13 @@ Once Gemini generates the data:
 
 1. Once the sheet opens, confirm the filename at the top reads **`LunchAgentDataBase`**
 2. If not, click the filename and rename it
-3. Confirm you have exactly two tabs at the bottom: **`Sheet1`** and **`Ingredients`**
+3. Confirm you have exactly two tabs at the bottom: **`LunchAgentDataBase`** and **`Ingredients`**
 
 ### ✅ Verify the Spreadsheet Structure
 
 The scripts depend on these exact column positions — confirm before continuing:
 
-**Sheet1 tab** (your meal list):
+**LunchAgentDataBase tab** (your meal list):
 
 | Column | Content |
 |--------|---------|
