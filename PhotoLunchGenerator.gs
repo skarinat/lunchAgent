@@ -8,7 +8,7 @@ function onEdit(e) {
 }
 function runLunchAgent() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName("Sheet1");
+  const sheet = ss.getSheetByName("LunchAgentDataBase");
   const folderId = " *** INSERT YOUR FOLDER ID HERE **** ";
   
   // 1. Get Spreadsheet Data (Context)
