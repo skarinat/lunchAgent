@@ -3,7 +3,8 @@ const RECIPIENT_EMAIL = " *** INSERT EMAIL *** ";
 
 function sendDailyLunchEmail() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("LunchAgentDataBase");
+//Note that this is where the name of the sheet tab is given, not the name of the file. It does not matter if both names are the same.
+  var sheet = ss.getSheetByName("LunchAgentDataBase"); 
   var data = sheet.getDataRange().getDisplayValues();
   
   var today = new Date();
