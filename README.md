@@ -264,8 +264,8 @@ You now have a functional AI-powered Lunch Agent! It reads your meal database, p
 **Ways to extend it:**
 - Add more meal categories or dietary filters to your spreadsheet
 - Send to multiple recipients (comma-separate addresses in `emailRecipient`)
-- Swap Gemini 2.5 Flash for a different model by updating the model name in the API URL
-- Integrate with Google Calendar to avoid repeating the same meal twice in a week
+- Make a workout excercise agent
+- Make a kids activity agent 
 
 ---
 
