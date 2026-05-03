@@ -163,13 +163,13 @@ Copy each script from this repository into your Apps Script project.
 
 1. In Apps Script, click **"+" > Script** and name it exactly: `DailyLunchGenerator.gs`
 2. Copy the code from [`DailyLunchGenerator.gs`](./DailyLunchGenerator.gs) and paste it in
-3. Find line ~35 and insert your email address:
+3. Find line ~2 and insert your email address:
    ```javascript
    // Before:
-   var emailRecipient = "**** INSERT YOUR EMAIL *****";
+   const emailRecipient = "**** INSERT YOUR EMAIL *****";
 
    // After:
-   var emailRecipient = "you@gmail.com";
+   const emailRecipient = "you@gmail.com";
    ```
 4. Click 💾 **Save**, then click **Run**. Accept the permissions dialog when prompted.
 
@@ -227,11 +227,8 @@ Copy each script from this repository into your Apps Script project.
    // After:
    var folderId = "1A2B3C4D5E6F7G8H9I0J"; // ← paste your actual Folder ID here
    ```
-5. Set the **recipient email address** on the email line:
-   ```javascript
-   var emailRecipient = "you@gmail.com";
-   ```
-6. Click 💾 **Save**, then click **Run**
+
+5. Click 💾 **Save**, then click **Run**
 
 > 💡 **How to use it:** Upload a photo of your fridge or a grocery receipt into your `LunchAgentPhotos` folder in Google Drive, then run the script. If it detects a **fridge photo**, it suggests 3 high-protein kid-friendly lunches. If it detects a **grocery receipt**, it compares items against your spreadsheet favorites.
 
