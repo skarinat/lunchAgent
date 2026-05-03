@@ -14,7 +14,7 @@ function sendWeeklyPrepEmail() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   
   // Update these names to match your actual sheet names
-  const lunchSheet = ss.getSheetByName("Sheet1");
+  const lunchSheet = ss.getSheetByName("LunchAgentDataBase");
   const ingredientSheet = ss.getSheetByName("Ingredients"); 
   
   if (!lunchSheet || !ingredientSheet) {
