@@ -25,7 +25,7 @@ This workshop automates the daily *"What's for lunch?"* dilemma using **Google S
 
 ## Step 1: Connect to Wi-Fi
 
-Connect to the workshop guest Wi-Fi (or your personal hotspot) before proceeding.
+Connect to the firm's personal Wi-Fi (or your personal hotspot) before proceeding.
 
 ---
 
