@@ -3,7 +3,7 @@ const RECIPIENT_EMAIL = " *** INSERT EMAIL *** ";
 
 function sendDailyLunchEmail() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName("Sheet1");
+  var sheet = ss.getSheetByName("LunchAgentDataBase");
   var data = sheet.getDataRange().getDisplayValues();
   
   var today = new Date();
