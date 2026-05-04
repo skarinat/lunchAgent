@@ -3,7 +3,6 @@
 > **Workshop Guide v2** — Build a smart daily lunch planner that picks a meal, generates a grocery list using AI, and emails it to you automatically.
 
 ---
-
 ## 📋 Overview
 
 This workshop automates the daily *"What's for lunch?"* dilemma using **Google Sheets** and **Google Apps Script**. You will build a system that:
