@@ -355,6 +355,7 @@ The script must:
 | `Setup.gs` | Populates your sheet with sample data + AI meal generator |
 | `appscript.json` | Manifest file — restricts script permissions to required scopes |
 | `LunchAgentDataBase.xlsx` | Starter spreadsheet with sample meal data |
+| `Link Video Recording` | https://youtu.be/eZxkuGBqm_o |
 
 ---
 
