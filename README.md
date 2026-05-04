@@ -356,6 +356,7 @@ The script must:
 | `appscript.json` | Manifest file — restricts script permissions to required scopes |
 | `LunchAgentDataBase.xlsx` | Starter spreadsheet with sample meal data |
 | `Link Video Recording` | https://youtu.be/eZxkuGBqm_o |
+| `Link Video Recording - Bonus exercise` | https://youtu.be/ledsJWRa10g |
 
 ---
 
