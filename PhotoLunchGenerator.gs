@@ -1,11 +1,3 @@
-function onEdit(e) {
-  const range = e.range;
-  // Only run if the edited cell is E1 and it's checked (true)
-  if (range.getA1Notation() === "E1" && range.getValue() === true) {
-    runLunchAgent(); // Call your agent
-    range.setValue(false); // Uncheck it automatically for next time
-  }
-}
 function runLunchAgent() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName("LunchAgentDataBase");
