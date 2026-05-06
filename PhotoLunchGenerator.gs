@@ -27,7 +27,7 @@ function runLunchAgent() {
   
   const prompt = `You are a helpful Lunch Agent. I am providing you with two things:
     1. A list of our favorite lunch meals and ingredients from my spreadsheet: ${mealInventory}
-    2. A photo of my current fridge contents.
+    2. A photo — either of my fridge contents OR a grocery receipt.
     
     TASK: 
     - Identify what ingredients are visible in the photo.
